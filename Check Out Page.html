@@ -24,12 +24,71 @@
         }
 
         /* When the success page is the target, hide the checkout page that follows it */
-        #success-page:target + #checkout-page {
+        #success-page:target ~ #checkout-page {
             display: none;
+        }
+
+        /* User-provided styles for header */
+        .header{
+            background-color: #E74C3C;
+            padding-top: 30px;
+        }
+        .logo{
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .menu{
+            font-size: 16px;
+            background-color: #E74C3C;
+            padding: 10px 0 20px 0;
+        }
+        .menu ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            color: white;
+        }
+        .menu ul li{
+            cursor: pointer;
+            padding-top: 5px;
+        }
+        .checkout-button{
+            color: white;
+            text-decoration: none;
+        }
+        .checkout-button:hover {
+            border-top: 2px solid white;
+            padding-top: 3px;
         }
     </style>
 </head>
 <body>
+
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <!-- The CSS filter is used to make the black logo image appear white -->
+                <img src="home_politics_logo.png" alt="Logo" style="filter: brightness(0) invert(1); max-height: 60px;">
+            </div> 
+            <div class="menu">
+                <ul>
+                    <li>Home</li>
+                    <li>News</li>
+                    <li>Important Subjects</li>
+                    <li>About</li>
+                    <li>Documents</li>
+                    <li>Staff</li>
+                    <li><a class="checkout-button" href="checkout.html">CheckOut</a></li>
+                </ul>
+            </div> 
+        </div> 
+    </div>
 
     <!-- Success Page (Moved here and initially hidden by CSS) -->
     <div id="success-page" class="container my-5 text-center">
@@ -47,7 +106,7 @@
                          <p class="fs-5">Your order number is: <span id="order-number" class="fw-bold text-primary">ORD-123456</span></p>
                          <p class="text-muted small mt-2 mb-0">You will receive an email confirmation shortly with your order details.</p>
                     </div>
-                    <a href="#" class="btn btn-primary w-100 py-3 mt-4">
+                    <a href="Index.html" class="btn btn-primary w-100 py-3 mt-4">
                         Continue Shopping
                     </a>
                 </div>
