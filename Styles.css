@@ -1,0 +1,392 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /* Added this from your .info section to make it consistent */
+    background-color: #f9f9f9; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* --- Header Styles --- */
+.header {
+    background-color: #E74C3C;
+    height: 180px;
+    padding-top: 30px;
+}
+
+.logo {
+    text-align: center;   
+}
+
+.logo img {
+    height: 60px;
+    display: inline-block; 
+    margin: 0 auto;
+}
+
+.nav {
+    padding: 0 10px;
+    border-top: 1px solid rgb(135, 95, 95);
+    margin-top: 30px; 
+}
+
+.menu {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #E74C3C;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 17px;
+}
+
+.menu ul li {
+    cursor: pointer;
+    border-left: 1px solid rgb(135, 95, 95);
+    padding: 18px;
+}
+
+.menu ul li:first-child {
+    border-left: none;
+}
+
+.checkout-button {
+    color: white;
+    text-decoration: none;
+}
+
+.menu ul li:hover {
+    border-top: 2px solid white;
+}
+
+/* --- Content & Slideshow --- */
+.content {
+    background-color: transparent; 
+    height: auto;
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+}
+
+.slideshow {
+    width: 100%;
+    height: 700px;
+    background-image: url("home_politics_slide1.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slideshow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1; /* Above background, below text */
+}
+
+.slideshow-content {
+    position: relative;
+    z-index: 2; /* Above overlay */
+    color: white;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+.slideshow-content h1 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 50px;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    font-weight: normal;
+}
+
+.slideshow-content p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.read-more-button {
+    display: inline-block; 
+    text-decoration: none;
+    background-color:rgb(50, 45, 45);
+    color: white;
+    padding: 12px 25px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: white;
+    color: #E74C3C;
+}
+
+/* --- Info Bar --- */
+.info {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;         
+    background-color: #f9f9f9;
+    padding: 30px 20px;
+    width: 100%; 
+}
+
+.info .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.info h2 {
+    margin: 0; 
+    font-family: Georgia, "Times New Roman", Times, serif; 
+    font-size: 32px;           
+    font-weight: normal;       
+    color: #444;               
+}
+
+.info button {
+    appearance: none;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.info button:hover {
+    background-color: #d9d8d8;
+}
+
+/* ===============================================
+=== NEWS SECTION - MODIFIED AS REQUESTED ======
+===============================================
+*/
+
+.news-section {
+    background-color: #f9f9f9;
+    padding: 30px 20px 60px;
+}
+
+.news-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.news-card {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-image {
+    position: relative;
+    height: 200px;
+    margin-bottom: 25px;
+    overflow: hidden; 
+    cursor: pointer;
+}
+
+.card-image-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.red-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: #E74C3C;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2; 
+    display: flex;
+    align-items: center;
+    transform: translateY(100%); 
+}
+
+.icon-block {
+    flex: 1; /* This makes each block take up 50% width */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.icon-block + .icon-block {
+    border-left: 1px solid #333; /* "grayish black" */
+}
+
+
+.icon-block:hover {
+    background-color: white;
+    color: #E74C3C; 
+    opacity: .8;
+}
+
+
+/* 1. Image zoom and fade */
+.card-image:hover .card-image-bg {
+    transform: scale(1.1);
+    opacity: 0.7; /* Fades to 70% */
+}
+
+
+.card-image:hover .red-bar {
+    opacity: 1;
+    transform: translateY(0);
+    opacity: .8;
+}
+
+/* --- Card Image URLs --- */
+.card-image-1 {
+    background-image: url('News\ Block\ 1.jpg'); /* Placeholder */
+}
+.card-image-2 {
+    background-image: url('News\ Block\ 2.jpg'); /* Placeholder */
+}
+.card-image-3 {
+    background-image: url('News\ Block\ 3.jpg'); /* Placeholder */
+}
+
+/* --- Card Content (Unchanged) --- */
+.card-content h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 22px;
+    line-height: 1.3;
+    color: #444;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 15px;
+    /* Added text-align left, as it's centered by default from .content */
+    text-align: left;
+}
+
+.card-content p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 20px;
+    /* Added text-align left */
+    text-align: left;
+}
+
+.card-meta {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    color: #aaa; 
+}
+
+.meta-item .icon {
+    font-size: 12px;
+    margin-right: 3px;
+    color: #bbb; 
+}
+
+.comment-count {
+    font-weight: bold;
+    color: #E74C3C; 
+}
+
+.meta-read-more {
+    padding-left: 15px; 
+    margin-left: 15px; 
+    border-left: 1px solid #e0e0e0; 
+}
+
+.card-meta .read-more {
+    font-size: 12px;
+    font-weight: bold;
+    color: #E74C3C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.card-meta .read-more:hover {
+    color: #333;
+}
+
+/* --- Footer (Unchanged) --- */
+.footer {
+    background-color: lightgreen;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    width: 100%;
+}
+
+/* --- Responsive (Unchanged) --- */
+@media (max-width: 768px) {
+    .news-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    /* You might want to add more responsive rules for header/nav */
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

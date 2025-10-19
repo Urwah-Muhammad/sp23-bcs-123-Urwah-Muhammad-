@@ -1,146 +1,148 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>My First Web Page</title>
         <link rel="stylesheet" href="Styles.css">
-        
-
-
-        <style>
-
-            *{
-                box-sizing: border-box;
-            }
-
-            body{
-                margin: 0;
-                font-family: Arial, sans-serif;
-            }   
-
-            .header{
-                background-color: #E74C3C;
-                height: 200px;
-            }
-
-            .container{
-                padding-top: 30px;
-            }
-
-            .logo{
-                font-size: 24px;
-                font-weight: bold;
-                color: white;
-                text-align: center;
-                margin-bottom: 20px;
-            }
-
-            
-            .menu{
-                font-size: 16px;
-                background-color: #E74C3C;
-                padding: 40px;   
-            }
-
-            .menu ul{
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                gap: 15px;
-                justify-content: center;
-                color: white;
-            }
-            .menu ul li{
-                cursor: pointer;
-                padding-top: 5px;
-            }
-
-            .content{
-                background-color: lightgrey;
-                height: auto;
-                text-align: center;
-                font-size: 24px;
-                position: relative;
-            }
-
-            .footer{
-                background-color: lightgreen;
-                height: 50px;
-                text-align: center;
-                line-height: 50px;
-                position: relative;
-                bottom: 0;
-                width: 100%;
-            }
-
-            .checkout-button{
-                color: white;
-                text-decoration: none;
-            }
-
-            .menu ul li:hover {
-                border-top: 2px solid white;
-            }
-            
-            
-
-            .slideshow{
-                width: 100%;
-                height: 700px;
-                background-image: url("home_politics_slide1.jpg"); 
-                background-size: cover;  
-                background-position: center;
-            }
-        </style>
     </head>
-
-
     <body>
 
-
-
-       <div class = header>
-            <div class = container>
-                <div class = logo>
-
+        <div class="header">
+            <div class="container">
+                <div class="logo">
                     <img src="home_politics_logo.png" alt="Logo">
-                
                 </div> 
 
-                <div class = menu>
-                    <ul>
-                        <li>Home</li>
-                        <li>News</li>
-                        <li>Important Subjects</li>
-                        <li>About</li>
-                        <li>Documents</li>
-                        <li>Staff</li>
-                        <li ><a class = checkout-button href="Check Out Page.html">CheckOut</a></li>
-                    </ul>
+                <div class="nav">
+                    <div class="menu">
+                        <ul>
+                            <li>Home</li>
+                            <li>News</li>
+                            <li>Important Subjects</li>
+                            <li>About</li>
+                            <li>Documents</li>
+                            <li>Staff</li>
+                            <li><a class="checkout-button" href="Check Out Page.html">CheckOut</a></li>
+                        </ul>
+                    </div>
                 </div> 
             </div>  
-
-
-
         </div>
 
         
-       <div class = content>
-        
-
-        <div class = slideshow>
+        <div class="content">
             
-</a>
+            <div class="slideshow">
+                <div class="slideshow-overlay"></div> 
+                <div class="slideshow-content container">
+                    <h1>Dapibus risus ante sodales lectus blandit eu tempor</h1>
+                    <p>Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies curitur et ligula ut molestie</p>
+                    <a href="#" class="read-more-button">READ MORE</a>
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="container">
+                    <div>
+                        <h2>Recent news</h2>
+                    </div>
+                    <div>
+                        <button>VIEW ALL</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-section">
+                <div class="container">
+                    <div class="news-grid">
+
+                        <div class="news-card">
+                            <div class="card-image">
+                                <div class="card-image-bg card-image-1"></div>
+                                
+                                <div class="red-bar">
+                                    <div class="icon-block">
+                                        &#128269; </div>
+                                    <div class="icon-block">
+                                        &#128279; </div>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2>Proin dui sodales imperdi sit sapien fames ac luctus</h2>
+                                <p>Pellentesque et lacus pretium tincidunt. Pellentesque at metus. Donec nisl a nisl. Vestibulum ante ipsum primis in nulla orci ut leo nec cursus consequat, orci ut</p>
+                            </div>
+                            <div class="card-meta">
+                                <div class="meta-item meta-comments">
+                                    <span class="icon">&#128172;</span>
+                                    <span class="comment-count">2</span>
+                                </div>
+                                <div class="meta-item meta-read-more">
+                                    <span class="icon">&#128196;</span>
+                                    <a href="#" class="read-more">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="news-card">
+                            <div class="card-image">
+                                <div class="card-image-bg card-image-2"></div>
+                                
+                                <div class="red-bar">
+                                    <div class="icon-block">
+                                        &#128269; </div>
+                                    <div class="icon-block">
+                                        &#128279; </div>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2>Vestibulum commodo volutpat laoreet</h2>
+                                <p>Nunc felis. Curabitur ac ipsum. Pellentesque nibh ultricies est. Maecenas consequat, augue a venenatis risus. Ut id mollis vel, lacinia quam. Praesent blandit malesuada. Suspendisse commodo</p>
+                            </div>
+                            <div class="card-meta">
+                                <div class="meta-item meta-comments">
+                                    <span class="icon">&#128172;</span>
+                                    <span class="comment-count">0</span>
+                                </div>
+                                <div class="meta-item meta-read-more">
+                                    <span class="icon">&#128196;</span>
+                                    <a href="#" class="read-more">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="news-card">
+                            <div class="card-image">
+                                <div class="card-image-bg card-image-3"></div>
+                                
+                                <div class="red-bar">
+                                    <div class="icon-block">
+                                        &#128269; </div>
+                                    <div class="icon-block">
+                                        &#128279; </div>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h2>Quisque lorem tortor fringilla sed vesti bulum justo vel</h2>
+                                <p>Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vella ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat.</p>
+                            </div>
+                            <div class="card-meta">
+                                <div class="meta-item meta-comments">
+                                    <span class="icon">&#128172;</span>
+                                    <span class="comment-count">0</span>
+                                </div>
+                                <div class="meta-item meta-read-more">
+                                    <span class="icon">&#128196;</span>
+                                    <a href="#" class="read-more">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> 
+                </div> 
+            </div> 
         </div>
+        
+        
+        <div class="footer">Footer</div>
 
-
-
-
-
-
-       </div>
-
-
-
-        <div class = footer>Footer</div>
     </body>
 </html>
