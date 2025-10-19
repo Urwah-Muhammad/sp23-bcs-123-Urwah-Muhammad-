@@ -5,7 +5,6 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    /* Added this from your .info section to make it consistent */
     background-color: #f9f9f9; 
 }
 
@@ -168,9 +167,9 @@ body {
 .info h2 {
     margin: 0; 
     font-family: Georgia, "Times New Roman", Times, serif; 
-    font-size: 32px;           
+    font-size: 32px;         
     font-weight: normal;       
-    color: #444;               
+    color: #444;                 
 }
 
 .info button {
@@ -194,8 +193,8 @@ body {
 }
 
 /* ===============================================
-=== NEWS SECTION - MODIFIED AS REQUESTED ======
-===============================================
+    === RECENT NEWS SECTION ===
+    ===============================================
 */
 
 .news-section {
@@ -231,13 +230,12 @@ body {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-
 .red-bar {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 20%;
+    height: 20%; 
     background-color: #E74C3C;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -248,8 +246,8 @@ body {
 }
 
 .icon-block {
-    flex: 1; /* This makes each block take up 50% width */
-    height: 100%;
+    flex: 1; 
+    height: 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -259,44 +257,36 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 .icon-block + .icon-block {
     border-left: 1px solid #333; /* "grayish black" */
 }
 
-
 .icon-block:hover {
     background-color: white;
     color: #E74C3C; 
-    opacity: .8;
 }
 
-
-/* 1. Image zoom and fade */
 .card-image:hover .card-image-bg {
-    transform: scale(1.1);
+    transform: scale(1.1) translateY(-5px); /* Zooms, moves up */
     opacity: 0.7; /* Fades to 70% */
 }
 
-
 .card-image:hover .red-bar {
     opacity: 1;
-    transform: translateY(0);
-    opacity: .8;
+    transform: translateY(0); /* Slides it into view */
 }
 
-/* --- Card Image URLs --- */
+/* Card Image URLs */
 .card-image-1 {
-    background-image: url('News\ Block\ 1.jpg'); /* Placeholder */
+    background-image: url('https://i.imgur.com/8xQyD3b.png');
 }
 .card-image-2 {
-    background-image: url('News\ Block\ 2.jpg'); /* Placeholder */
+    background-image: url('https://i.imgur.com/XqT5qJ1.png');
 }
 .card-image-3 {
-    background-image: url('News\ Block\ 3.jpg'); /* Placeholder */
+    background-image: url('https://i.imgur.com/GjN51N9.png');
 }
 
-/* --- Card Content (Unchanged) --- */
 .card-content h2 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 22px;
@@ -305,7 +295,6 @@ body {
     font-weight: normal;
     margin-top: 0;
     margin-bottom: 15px;
-    /* Added text-align left, as it's centered by default from .content */
     text-align: left;
 }
 
@@ -316,11 +305,10 @@ body {
     color: #777;
     margin-top: 0;
     margin-bottom: 20px;
-    /* Added text-align left */
     text-align: left;
 }
 
-.card-meta {
+.card-info { /* Renamed from .card-meta */
     display: flex; 
     justify-content: flex-end; 
     align-items: center; 
@@ -328,13 +316,13 @@ body {
     font-size: 12px;
 }
 
-.meta-item {
+.card-comments { /* Renamed from .meta-item */
     display: flex;
     align-items: center;
     color: #aaa; 
 }
 
-.meta-item .icon {
+.card-comments .icon { /* Selector updated from .meta-item .icon */
     font-size: 12px;
     margin-right: 3px;
     color: #bbb; 
@@ -345,13 +333,13 @@ body {
     color: #E74C3C; 
 }
 
-.meta-read-more {
+.card-read-more { /* Renamed from .meta-read-more */
     padding-left: 15px; 
     margin-left: 15px; 
     border-left: 1px solid #e0e0e0; 
 }
 
-.card-meta .read-more {
+.card-info .read-more { /* Selector updated from .card-meta .read-more */
     font-size: 12px;
     font-weight: bold;
     color: #E74C3C;
@@ -359,34 +347,372 @@ body {
     transition: color 0.3s ease;
 }
 
-.card-meta .read-more:hover {
+.card-info .read-more:hover { /* Selector updated from .card-meta .read-more:hover */
     color: #333;
 }
 
-/* --- Footer (Unchanged) --- */
+
+/* ===============================================
+    === IMPORTANT SUBJECTS SECTION ===
+    ===============================================
+*/
+
+.subjects-section {
+    background-color: #ffffff; /* White background */
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+/* This is the "wrapper" div that holds the 2 columns */
+.subjects-content-wrapper {
+    display: flex;
+    gap: 30px; 
+}
+
+/* COLUMN 1: The "big-box" */
+.subjects-main-column {
+    flex: 3; /* Makes this column 3/4 width */
+    display: flex;
+    flex-direction: column; /* Stacks header, list, and dots vertically */
+}
+
+/* COLUMN 2: The "ad" */
+.subjects-ad {
+    flex: 1; /* Makes this column 1/4 width */
+    background-image: url('home_politics_join_1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.subjects-ad:hover {
+     /* Use a different placeholder for the dark image */
+    background-image: url('home_politics_join_2.jpg');
+}
+
+
+/* --- STYLES INSIDE THE "big-box" --- */
+
+/* Header (Title & Arrows) */
+.subjects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px; /* Space between header and cards */
+}
+
+.subjects-title {
+    font-family: Georgia, "Times New Roman", Times, serif; 
+    font-size: 32px;            
+    font-weight: normal;        
+    color: #444;
+    margin: 0;
+    text-align: left;
+}
+
+.slider-arrows {
+    display: flex;
+    gap: 5px;
+}
+
+.slider-arrows a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    color: #888;
+    text-decoration: none;
+    text-align: center;
+    line-height: 28px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.slider-arrows a:hover {
+    background-color: #e0e0e0;
+}
+
+/* List of 3 Cards (small-boxes) */
+.subjects-list {
+    display: flex;
+    gap: 25px; 
+}
+
+/* Dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px; /* Space between cards and dots */
+}
+
+.slider-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; 
+    background-color: #ddd;
+}
+
+.slider-dots .dot.active {
+    background-color: #E74C3C; /* Your red color */
+}
+
+
+/* --- Individual Subject Card --- */
+.subject-card {
+    flex: 1; /* Each card takes 1/3 of the .subjects-list width */
+    text-align: left; 
+}
+
+.subject-image {
+    position: relative; 
+    overflow: hidden; /* This was added */
+}
+
+.subject-image img {
+    width: 100%;
+    display: block; 
+    transition: transform 0.3s ease; 
+    transform: scale(1.1); /* MODIFIED: Start zoomed in */
+}
+
+.subject-image:hover img {
+    transform: scale(1.1) translateY(-5px); /* MODIFIED: Keep zoom, move up */
+}
+
+.subject-date {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #fff;
+    padding: 5px 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.subject-info h3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: #444;
+    margin: 20px 0 15px 0;
+}
+
+.subject-divider {
+    width: 40px;
+    height: 2px;
+    background-color: #E74C3C; /* Your red color */
+    margin-bottom: 20px;
+}
+
+.subject-button {
+    display: inline-flex; 
+    text-decoration: none;
+    border: 1px solid #e0e0e0;
+    background-color: #f7f7f7;
+    font-size: 13px;
+    color: #777;
+    font-weight: bold;
+}
+
+.subject-button:hover {
+    background-color: #f0f0f0;
+}
+
+.button-icon {
+    background-color: #f0f0f0;
+    padding: 8px 10px;
+    border-right: 1px solid #e0e0e0;
+    color: #999;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    line-height: 0.8;
+}
+
+.button-text {
+    padding: 8px 12px;
+}
+
+
+/* --- Responsive (for this section) --- */
+@media (max-width: 768px) {
+    .subjects-content-wrapper {
+        flex-direction: column; /* Stacks the ad below the big-box */
+    }
+
+    .subjects-list {
+        flex-direction: column; /* Stacks the 3 cards */
+        gap: 40px;
+    }
+    
+    .subjects-ad {
+        max-width: 300px; /* Stop ad from being huge */
+        min-height: 400px; /* Give it some height */
+        align-self: center; /* Center the ad */
+    }
+
+    .subjects-header {
+        flex-direction: column; /* Stacks the arrows below the title */
+        gap: 20px;
+        align-items: flex-start; /* Aligns title to the left */
+    }
+
+    .slider-arrows {
+        align-self: flex-start; /* Aligns arrows to the left */
+    }
+}
+
+
+/* ===============================================
+    === INFO SECTION (History, Docs, About) ===
+    === (Now inside .subjects-section)
+    ===============================================
+*/
+
+.info-section {
+    /* We add margin-top to separate it from the slider/ad wrapper above */
+    margin-top: 60px;
+    /* It will use the .container padding from its parent */
+}
+
+
+.info-grid {
+    display: flex;
+    gap: 40px; /* Space between columns */
+    text-align: left;
+}
+
+.info-column {
+    /* All columns will share space, but we'll give them
+       different flex-grow/shrink/basis values */
+    min-width: 0; /* Prevents flex overflow */
+}
+
+/* Define the column widths based on the image */
+.history-column {
+    flex: 3; /* 3 parts of the total space */
+}
+.documents-column {
+    flex: 4; /* 4 parts of the total space */
+}
+.about-column {
+    flex: 5; /* 5 parts of the total space */
+}
+
+.info-title {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 24px;
+    font-weight: normal;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.info-image img {
+    width: 100%;
+    display: block;
+}
+
+.info-subtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.info-column p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* New "Read more" button style */
+.info-read-more {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    color: #777;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.info-read-more:hover {
+    background-color: #ffffff;
+    border-color: #ccc;
+    color: #333;
+}
+
+
+/* --- Document List Styles --- */
+
+.document-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.document-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px; /* Space between icon and text */
+    margin-bottom: 25px;
+}
+
+.pdf-icon {
+    display: block;
+    text-decoration: none;
+    background-color: #E74C3C; /* Re-using site's red */
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 3px;
+    flex-shrink: 0; /* Prevents icon from shrinking */
+}
+
+.document-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.document-link {
+    text-decoration: none;
+    color: #E74C3C; /* Re-using site's red */
+    font-weight: 600; /* A bit bold */
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.document-link:hover {
+    text-decoration: underline;
+}
+
+.download-text {
+    font-size: 12px;
+    color: #999;
+}
+
+
+
+/* --- Footer --- */
 .footer {
     background-color: lightgreen;
     height: 50px;
     text-align: center;
     line-height: 50px;
     width: 100%;
-}
-
-/* --- Responsive (Unchanged) --- */
-@media (max-width: 768px) {
-    .news-grid {
-        flex-direction: column;
-        gap: 50px;
-    }
-
-    /* You might want to add more responsive rules for header/nav */
-    .menu ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .info .container {
-        flex-direction: column;
-        gap: 20px;
-    }
 }
