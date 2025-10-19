@@ -5,7 +5,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f9f9f9; 
+    background-color: #f9f9f9;
 }
 
 .container {
@@ -22,19 +22,19 @@ body {
 }
 
 .logo {
-    text-align: center;   
+    text-align: center;
 }
 
 .logo img {
     height: 60px;
-    display: inline-block; 
+    display: inline-block;
     margin: 0 auto;
 }
 
 .nav {
     padding: 0 10px;
     border-top: 1px solid rgb(135, 95, 95);
-    margin-top: 30px; 
+    margin-top: 30px;
 }
 
 .menu {
@@ -73,7 +73,7 @@ body {
 
 /* --- Content & Slideshow --- */
 .content {
-    background-color: transparent; 
+    background-color: transparent;
     height: auto;
     text-align: center;
     font-size: 24px;
@@ -128,9 +128,9 @@ body {
 }
 
 .read-more-button {
-    display: inline-block; 
+    display: inline-block;
     text-decoration: none;
-    background-color:rgb(50, 45, 45);
+    background-color: rgb(50, 45, 45);
     color: white;
     padding: 12px 25px;
     font-family: "Times New Roman", Times, serif;
@@ -149,11 +149,11 @@ body {
 /* --- Info Bar --- */
 .info {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;         
+    justify-content: space-between;
+    align-items: center;
     background-color: #f9f9f9;
     padding: 30px 20px;
-    width: 100%; 
+    width: 100%;
 }
 
 .info .container {
@@ -165,11 +165,11 @@ body {
 }
 
 .info h2 {
-    margin: 0; 
-    font-family: Georgia, "Times New Roman", Times, serif; 
-    font-size: 32px;         
-    font-weight: normal;       
-    color: #444;                 
+    margin: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 32px;
+    font-weight: normal;
+    color: #444;
 }
 
 .info button {
@@ -194,7 +194,7 @@ body {
 
 /* ===============================================
     === RECENT NEWS SECTION ===
-    ===============================================
+   ===============================================
 */
 
 .news-section {
@@ -217,7 +217,7 @@ body {
     position: relative;
     height: 200px;
     margin-bottom: 25px;
-    overflow: hidden; 
+    overflow: hidden;
     cursor: pointer;
 }
 
@@ -235,19 +235,19 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 20%; 
+    height: 20%;
     background-color: #E74C3C;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 2; 
+    z-index: 2;
     display: flex;
     align-items: center;
-    transform: translateY(100%); 
+    transform: translateY(100%);
 }
 
 .icon-block {
-    flex: 1; 
-    height: 100%; 
+    flex: 1;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -257,13 +257,13 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.icon-block + .icon-block {
+.icon-block+.icon-block {
     border-left: 1px solid #333; /* "grayish black" */
 }
 
 .icon-block:hover {
     background-color: white;
-    color: #E74C3C; 
+    color: #E74C3C;
 }
 
 .card-image:hover .card-image-bg {
@@ -280,9 +280,11 @@ body {
 .card-image-1 {
     background-image: url('https://i.imgur.com/8xQyD3b.png');
 }
+
 .card-image-2 {
     background-image: url('https://i.imgur.com/XqT5qJ1.png');
 }
+
 .card-image-3 {
     background-image: url('https://i.imgur.com/GjN51N9.png');
 }
@@ -309,9 +311,9 @@ body {
 }
 
 .card-info { /* Renamed from .card-meta */
-    display: flex; 
-    justify-content: flex-end; 
-    align-items: center; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
 }
@@ -319,24 +321,24 @@ body {
 .card-comments { /* Renamed from .meta-item */
     display: flex;
     align-items: center;
-    color: #aaa; 
+    color: #aaa;
 }
 
 .card-comments .icon { /* Selector updated from .meta-item .icon */
     font-size: 12px;
     margin-right: 3px;
-    color: #bbb; 
+    color: #bbb;
 }
 
 .comment-count {
     font-weight: bold;
-    color: #E74C3C; 
+    color: #E74C3C;
 }
 
 .card-read-more { /* Renamed from .meta-read-more */
-    padding-left: 15px; 
-    margin-left: 15px; 
-    border-left: 1px solid #e0e0e0; 
+    padding-left: 15px;
+    margin-left: 15px;
+    border-left: 1px solid #e0e0e0;
 }
 
 .card-info .read-more { /* Selector updated from .card-meta .read-more */
@@ -351,10 +353,9 @@ body {
     color: #333;
 }
 
-
 /* ===============================================
     === IMPORTANT SUBJECTS SECTION ===
-    ===============================================
+   ===============================================
 */
 
 .subjects-section {
@@ -367,7 +368,7 @@ body {
 /* This is the "wrapper" div that holds the 2 columns */
 .subjects-content-wrapper {
     display: flex;
-    gap: 30px; 
+    gap: 30px;
 }
 
 /* COLUMN 1: The "big-box" */
@@ -380,7 +381,7 @@ body {
 /* COLUMN 2: The "ad" */
 .subjects-ad {
     flex: 1; /* Makes this column 1/4 width */
-    background-image: url('home_politics_join_1.jpg'); 
+    background-image: url('home_politics_join_1.jpg');
     background-size: cover;
     background-position: center;
     transition: background-image 0.3s ease-in-out;
@@ -388,10 +389,9 @@ body {
 }
 
 .subjects-ad:hover {
-     /* Use a different placeholder for the dark image */
+    /* Use a different placeholder for the dark image */
     background-image: url('home_politics_join_2.jpg');
 }
-
 
 /* --- STYLES INSIDE THE "big-box" --- */
 
@@ -404,9 +404,9 @@ body {
 }
 
 .subjects-title {
-    font-family: Georgia, "Times New Roman", Times, serif; 
-    font-size: 32px;            
-    font-weight: normal;        
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 32px;
+    font-weight: normal;
     color: #444;
     margin: 0;
     text-align: left;
@@ -438,7 +438,7 @@ body {
 /* List of 3 Cards (small-boxes) */
 .subjects-list {
     display: flex;
-    gap: 25px; 
+    gap: 25px;
 }
 
 /* Dots */
@@ -452,7 +452,7 @@ body {
 .slider-dots .dot {
     width: 10px;
     height: 10px;
-    border-radius: 50%; 
+    border-radius: 50%;
     background-color: #ddd;
 }
 
@@ -460,22 +460,21 @@ body {
     background-color: #E74C3C; /* Your red color */
 }
 
-
 /* --- Individual Subject Card --- */
 .subject-card {
     flex: 1; /* Each card takes 1/3 of the .subjects-list width */
-    text-align: left; 
+    text-align: left;
 }
 
 .subject-image {
-    position: relative; 
+    position: relative;
     overflow: hidden; /* This was added */
 }
 
 .subject-image img {
     width: 100%;
-    display: block; 
-    transition: transform 0.3s ease; 
+    display: block;
+    transition: transform 0.3s ease;
     transform: scale(1.1); /* MODIFIED: Start zoomed in */
 }
 
@@ -487,7 +486,7 @@ body {
     position: absolute;
     top: 12px;
     left: 12px;
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     padding: 5px 8px;
     font-size: 12px;
@@ -510,7 +509,7 @@ body {
 }
 
 .subject-button {
-    display: inline-flex; 
+    display: inline-flex;
     text-decoration: none;
     border: 1px solid #e0e0e0;
     background-color: #f7f7f7;
@@ -538,125 +537,106 @@ body {
 }
 
 
-/* --- Responsive (for this section) --- */
-@media (max-width: 768px) {
-    .subjects-content-wrapper {
-        flex-direction: column; /* Stacks the ad below the big-box */
-    }
-
-    .subjects-list {
-        flex-direction: column; /* Stacks the 3 cards */
-        gap: 40px;
-    }
-    
-    .subjects-ad {
-        max-width: 300px; /* Stop ad from being huge */
-        min-height: 400px; /* Give it some height */
-        align-self: center; /* Center the ad */
-    }
-
-    .subjects-header {
-        flex-direction: column; /* Stacks the arrows below the title */
-        gap: 20px;
-        align-items: flex-start; /* Aligns title to the left */
-    }
-
-    .slider-arrows {
-        align-self: flex-start; /* Aligns arrows to the left */
-    }
-}
-
-
 /* ===============================================
     === INFO SECTION (History, Docs, About) ===
-    === (Now inside .subjects-section)
-    ===============================================
+   ===============================================
 */
 
 .info-section {
     /* We add margin-top to separate it from the slider/ad wrapper above */
     margin-top: 60px;
-    /* It will use the .container padding from its parent */
 }
-
 
 .info-grid {
     display: flex;
     gap: 40px; /* Space between columns */
     text-align: left;
+    /* align-items: stretch; is the default, which makes columns equal height */
 }
 
 .info-column {
-    /* All columns will share space, but we'll give them
-       different flex-grow/shrink/basis values */
     min-width: 0; /* Prevents flex overflow */
+
+    /* === FIX FOR BUTTON ALIGNMENT === */
+    display: flex;
+    flex-direction: column;
+    /* This makes each column a flex container */
 }
 
 /* Define the column widths based on the image */
 .history-column {
     flex: 3; /* 3 parts of the total space */
 }
+
 .documents-column {
     flex: 4; /* 4 parts of the total space */
 }
+
 .about-column {
     flex: 5; /* 5 parts of the total space */
 }
 
 .info-title {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 24px;
-    font-weight: normal;
-    color: #555;
+    font-family: 'Merriweather', serif; /* Using Google Font */
+    font-size: 28px; /* Larger like the target image */
+    font-weight: 400;
+    color: #444; /* Darker text */
     margin-top: 0;
     margin-bottom: 25px;
+}
+
+.info-image {
+    margin-bottom: 20px;
+    padding: 0;
 }
 
 .info-image img {
     width: 100%;
     display: block;
+    height: auto;
 }
 
 .info-subtitle {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
+    font-family: 'Lato', sans-serif; /* Using Google Font */
+    font-size: 18px;
+    font-weight: 700; /* Bolder */
     color: #333;
-    margin-top: 20px;
+    margin-top: 0; /* Removed extra space */
     margin-bottom: 10px;
 }
 
 .info-column p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif; /* Using Google Font */
     font-size: 14px;
-    color: #777;
+    color: #5a5a5a; /* Matching target image text color */
     line-height: 1.6;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* More space between paragraphs */
 }
 
-/* New "Read more" button style */
+/* New "Read more" button style from target image */
 .info-read-more {
     display: inline-block;
     text-decoration: none;
     background-color: #ffffff;
-    border: 1px solid #ddd;
-    color: #777;
-    padding: 8px 18px;
-    font-size: 13px;
-    font-weight: bold;
-    margin-top: 10px;
+    border: 1px solid #ccc; /* Lighter border */
+    color: #555;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 400; /* Not bold */
     transition: all 0.3s ease;
+    margin-top: auto; /* Pushes button to the bottom */
+    align-self: flex-start; /* Stops it from stretching */
 }
 
 .info-read-more:hover {
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     border-color: #ccc;
     color: #333;
 }
 
 
-/* --- Document List Styles --- */
+/* --- Document List Styles (Updated to match image) --- */
 
 .document-list {
     list-style: none;
@@ -672,15 +652,18 @@ body {
 }
 
 .pdf-icon {
-    display: block;
+    display: flex; /* Use flex to center text */
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    background-color: #E74C3C; /* Re-using site's red */
+    background-color: #d9534f; /* PDF Red */
     color: #ffffff;
-    font-weight: bold;
-    font-size: 12px;
-    padding: 6px 10px;
+    font-weight: 700;
+    font-size: 14px;
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height */
     border-radius: 3px;
-    flex-shrink: 0; /* Prevents icon from shrinking */
+    flex-shrink: 0;
 }
 
 .document-details {
@@ -690,11 +673,11 @@ body {
 
 .document-link {
     text-decoration: none;
-    color: #E74C3C; /* Re-using site's red */
-    font-weight: 600; /* A bit bold */
+    color: #d9534f; /* Matching PDF Red */
+    font-weight: 700; /* Bolder */
     font-size: 15px;
     line-height: 1.4;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .document-link:hover {
@@ -702,11 +685,9 @@ body {
 }
 
 .download-text {
-    font-size: 12px;
-    color: #999;
+    font-size: 13px;
+    color: #777; /* Lighter text */
 }
-
-
 
 /* --- Footer --- */
 .footer {
@@ -715,4 +696,95 @@ body {
     text-align: center;
     line-height: 50px;
     width: 100%;
+}
+
+
+/* ===============================================
+    === RESPONSIVE STYLES (Mobile) ===
+   ===============================================
+*/
+
+@media (max-width: 768px) {
+    
+    .container {
+        padding: 0 15px; /* Less padding on mobile */
+    }
+
+    /* --- Responsive Header --- */
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu ul li {
+        border-left: none;
+        border-top: 1px solid rgb(135, 95, 95);
+        width: 100%; /* Make list items take full width */
+        text-align: center;
+    }
+    .menu ul li:first-child {
+        border-top: none;
+    }
+    .header {
+        height: auto; /* Let header height be automatic */
+        padding-bottom: 1px;
+    }
+    .nav {
+        margin-top: 20px;
+    }
+
+    /* --- Responsive Slideshow --- */
+    .slideshow-content h1 {
+        font-size: 36px;
+    }
+    .slideshow-content p {
+        font-size: 16px;
+    }
+    .slideshow {
+        height: 500px;
+    }
+
+    /* --- Responsive Info Bar --- */
+    .info .container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    /* --- Responsive News Grid --- */
+    .news-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* --- Responsive Subjects Section --- */
+    .subjects-content-wrapper {
+        flex-direction: column; /* Stacks the ad below the big-box */
+    }
+
+    .subjects-list {
+        flex-direction: column; /* Stacks the 3 cards */
+        gap: 40px;
+    }
+
+    .subjects-ad {
+        max-width: 300px; /* Stop ad from being huge */
+        min-height: 400px; /* Give it some height */
+        align-self: center; /* Center the ad */
+    }
+
+    .subjects-header {
+        flex-direction: column; /* Stacks the arrows below the title */
+        gap: 20px;
+        align-items: flex-start; /* Aligns title to the left */
+    }
+
+    .slider-arrows {
+        align-self: flex-start; /* Aligns arrows to the left */
+    }
+
+    /* --- Responsive Info Grid (History/Docs/About) --- */
+    .info-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
 }
