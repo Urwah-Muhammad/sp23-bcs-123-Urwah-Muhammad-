@@ -157,11 +157,16 @@ body {
 }
 
 
+
+/*
+    === INFO BAR SECTION ===
+*/
+
 .info-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     padding: 30px 20px;
     width: 100%;
 }
@@ -666,6 +671,79 @@ body {
 }
 
 
+/* === CUSTOMER TESTIMONIALS SECTION === */
+
+.testimonials-main {
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 50px 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+.testimonials-heading {
+  color: #E74C3C;
+  font-family: "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+
+.testimonial-box {
+  display: inline-block;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  margin: 10px;
+  padding: 20px;
+  vertical-align: top;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-box:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-box h4 {
+  color: #E74C3C;
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.stars {
+  color: #FFD700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.testimonial-box p {
+  font-family: "Times New Roman", serif;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.hidden-box {
+  display: none;
+}
+
+.testimonials-main:hover .hidden-box {
+  display: inline-block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
 
 /* 
     === HERO BANNER SECTION ===
@@ -739,7 +817,6 @@ body {
 }
 
 
-
 /* Footer Styles */
 #my-footer {
   background-color: #1c1c1c;
@@ -755,7 +832,7 @@ body {
 .footer-container {
   display: flex;              
   align-items: center;        
-  max-width: 1200px;          /
+  max-width: 1200px;  
   margin: 0 auto;            
 }
 
@@ -853,6 +930,11 @@ body {
         max-width: 300px;
         height: 300px;
         margin: 0 auto;
+    }
+ 
+    .testimonial-box {
+        width: 90%;
+        margin: 10px auto;
     }
 
     .hero-banner {
