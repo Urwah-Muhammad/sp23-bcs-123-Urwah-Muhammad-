@@ -840,12 +840,12 @@ body {
 
 
 .footer-container {
-  display: flex;              
-  align-items: center;        
-  max-width: 1200px;  
-  margin: 0 auto;            
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
 
 .copyright-text a {
   color: #e0e0e0;            
