@@ -71,7 +71,7 @@
                          <p class="fs-5">Your order number is: <span id="order-number" class="fw-bold text-primary">ORD-123456</span></p>
                          <p class="text-muted small mt-2 mb-0">You will receive an email confirmation shortly with your order details.</p>
                     </div>
-                    <a href="Index.html" class="btn btn-primary w-100 py-3 mt-4">
+                    <a href="..\Lab Task 1\Index.html" class="btn btn-primary w-100 py-3 mt-4">
                         Continue Shopping
                     </a>
                 </div>
@@ -194,48 +194,6 @@
     </div>
 
 </body>
-
-<script>
-function validateForm(e) {
-    e.preventDefault(); // Stop the link from instantly jumping to #success-page
-
-    var name = document.getElementById("name");
-    var address = document.getElementById("address");
-    var city = document.getElementById("city");
-    var zip = document.getElementById("zip");
-    var cardNumber = document.getElementById("card-number");
-    var expiryDate = document.getElementById("expiry-date");
-    var cvv = document.getElementById("cvv");
-
-    var isValid = true;
-
-    // Validate each field and apply red borders where needed
-    if (!name.value.trim()) { name.style.border = "2px solid red"; isValid = false; } else { name.style.border = ""; }
-    if (!address.value.trim()) { address.style.border = "2px solid red"; isValid = false; } else { address.style.border = ""; }
-    if (!city.value.trim()) { city.style.border = "2px solid red"; isValid = false; } else { city.style.border = ""; }
-    if (!zip.value.trim()) { zip.style.border = "2px solid red"; isValid = false; } else { zip.style.border = ""; }
-    if (!cardNumber.value.trim()) { cardNumber.style.border = "2px solid red"; isValid = false; } else { cardNumber.style.border = ""; }
-    if (!expiryDate.value.trim()) { expiryDate.style.border = "2px solid red"; isValid = false; } else { expiryDate.style.border = ""; }
-    if (!cvv.value.trim()) { cvv.style.border = "2px solid red"; isValid = false; } else { cvv.style.border = ""; }
-
-    if (!isValid) {
-        alert("Please fill in all required fields.");
-        return false;
-    }
-
-    //If form is valid, redirect to success page
-    window.location.hash = "#success-page";
-    return true;
-}
-
-function binding() {
-    var confirmBtn = document.getElementById("confirm-payment-btn");
-    confirmBtn.addEventListener("click", validateForm, false);
-}
-
-window.onload = binding;
-</script>
-
 
 </html>
 
