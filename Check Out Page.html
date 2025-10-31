@@ -7,6 +7,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -28,67 +29,31 @@
             display: none;
         }
 
-        /* User-provided styles for header */
-        .header{
-            background-color: #E74C3C;
-            padding-top: 30px;
-        }
-        .logo{
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .menu{
-            font-size: 16px;
-            background-color: #E74C3C;
-            padding: 10px 0 20px 0;
-        }
-        .menu ul{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-            color: white;
-        }
-        .menu ul li{
-            cursor: pointer;
-            padding-top: 5px;
-        }
-        .checkout-button{
-            color: white;
-            text-decoration: none;
-        }
-        .checkout-button:hover {
-            border-top: 2px solid white;
-            padding-top: 3px;
-        }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <div class="container">
-            <div class="logo">
-                <!-- The CSS filter is used to make the black logo image appear white -->
-                <img src="home_politics_logo.png" alt="Logo" style="filter: brightness(0) invert(1); max-height: 60px;">
-            </div> 
-            <div class="menu">
-                <ul>
-                    <li>Home</li>
-                    <li>News</li>
-                    <li>Important Subjects</li>
-                    <li>About</li>
-                    <li>Documents</li>
-                    <li>Staff</li>
-                    <li><a class="checkout-button" href="checkout.html">CheckOut</a></li>
-                </ul>
-            </div> 
-        </div> 
+    <div class="wrap">
+      <div class="logo">
+        <img src="home_politics_logo.png" alt="Logo">
+      </div>
+
+      <div class="header-nav">
+        <div class="menu">
+          <ul>
+            <li>Home</li>
+            <li>News</li>
+            <li>Important Subjects</li>
+            <li>About</li>
+            <li>Documents</li>
+            <li>Staff</li>
+            <li><a class="checkout-button" href="Check Out Page.html">CheckOut</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
 
     <!-- Success Page (Moved here and initially hidden by CSS) -->
     <div id="success-page" class="container my-5 text-center">
@@ -217,12 +182,22 @@
         </div>
     </div>
 
+    <div id="my-footer">
+        <div class="footer-container">
+            <div class="copyright-text">
+                © 2015 BeTheme by <a href="#">Muffin group</a> | All Rights Reserved | Powered by <a href="https://wordpress.org/">WordPress</a>
+            </div>
+            <a href="#" id="back-to-top" title="Back to top">
+            ^
+            </a>
+        </div>
+    </div>
+
 </body>
 
 <script>
-
-    function validateForm(e){
-    e.preventDefault();
+function validateForm(e) {
+    e.preventDefault(); // Stop the link from instantly jumping to #success-page
 
     var name = document.getElementById("name");
     var address = document.getElementById("address");
@@ -232,31 +207,35 @@
     var expiryDate = document.getElementById("expiry-date");
     var cvv = document.getElementById("cvv");
 
-    if(!name.value || !address.value || !city.value || !zip.value || !cardNumber.value || !expiryDate.value || !cvv.value){
+    var isValid = true;
+
+    // Validate each field and apply red borders where needed
+    if (!name.value.trim()) { name.style.border = "2px solid red"; isValid = false; } else { name.style.border = ""; }
+    if (!address.value.trim()) { address.style.border = "2px solid red"; isValid = false; } else { address.style.border = ""; }
+    if (!city.value.trim()) { city.style.border = "2px solid red"; isValid = false; } else { city.style.border = ""; }
+    if (!zip.value.trim()) { zip.style.border = "2px solid red"; isValid = false; } else { zip.style.border = ""; }
+    if (!cardNumber.value.trim()) { cardNumber.style.border = "2px solid red"; isValid = false; } else { cardNumber.style.border = ""; }
+    if (!expiryDate.value.trim()) { expiryDate.style.border = "2px solid red"; isValid = false; } else { expiryDate.style.border = ""; }
+    if (!cvv.value.trim()) { cvv.style.border = "2px solid red"; isValid = false; } else { cvv.style.border = ""; }
+
+    if (!isValid) {
         alert("Please fill in all required fields.");
-
-        if(!name.value) name.style.border = "2px solid red"; else name.style.border = "";
-        if(!address.value) address.style.border = "2px solid red"; else address.style.border = "";
-        if(!city.value) city.style.border = "2px solid red"; else city.style.border = "";
-        if(!zip.value) zip.style.border = "2px solid red"; else zip.style.border = "";
-        if(!cardNumber.value) cardNumber.style.border = "2px solid red"; else cardNumber.style.border = "";
-        if(!expiryDate.value) expiryDate.style.border = "2px solid red"; else expiryDate.style.border = "";
-        if(!cvv.value) cvv.style.border = "2px solid red"; else cvv.style.border = "";
-
         return false;
     }
+
+    // ✅ If form is valid, redirect to success page
+    window.location.hash = "#success-page";
     return true;
 }
 
-function binding(){
+function binding() {
     var confirmBtn = document.getElementById("confirm-payment-btn");
     confirmBtn.addEventListener("click", validateForm, false);
 }
 
-
 window.onload = binding;
-
-
 </script>
+
+
 </html>
 

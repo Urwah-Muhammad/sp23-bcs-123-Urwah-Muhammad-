@@ -11,16 +11,17 @@ body {
     background-color: #f9f9f9;
 }
 
-.container {
+.wrap {
     max-width: 1260px; 
     margin: 0 auto;
     padding: 0 30px;
+    height: auto;
 }
 
 /* --- Header Styles --- */
 .header {
     background-color: #E74C3C;
-    height: 180px;
+    height: 185px;
     padding-top: 30px;
 }
 
@@ -34,7 +35,7 @@ body {
     margin: 0 auto;
 }
 
-.nav {
+.header-nav {
     padding: 0 10px;
     border-top: 1px solid rgb(135, 95, 95);
     margin-top: 30px;
@@ -103,12 +104,12 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1; /* Above background, below text */
+    z-index: 1;
 }
 
 .slideshow-content {
     position: relative;
-    z-index: 2; /* Above overlay */
+    z-index: 2;
     color: white;
     max-width: 800px;
     padding: 20px;
@@ -149,8 +150,9 @@ body {
     color: #E74C3C;
 }
 
+
 /* --- Info Bar --- */
-.info {
+.info-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -159,7 +161,7 @@ body {
     width: 100%;
 }
 
-.info .container {
+.info-bar .wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -167,7 +169,7 @@ body {
     padding: 0 30px;
 }
 
-.info h2 {
+.info-bar h2 {
     margin: 0;
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 32px;
@@ -175,7 +177,7 @@ body {
     color: #444;
 }
 
-.info button {
+.info-bar button {
     appearance: none;
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
@@ -191,14 +193,13 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.info button:hover {
+.info-bar button:hover {
     background-color: #d9d8d8;
 }
 
 /* ===============================================
     === RECENT NEWS SECTION ===
-   ===============================================
-*/
+   =============================================== */
 
 .news-section {
     background-color: #f9f9f9;
@@ -216,9 +217,9 @@ body {
     min-width: 0;
 }
 
-.card-image {
+.news-card-image {
     position: relative;
-    height: 200px;
+    height: 250px;
     margin-bottom: 25px;
     overflow: hidden;
     cursor: pointer;
@@ -261,7 +262,7 @@ body {
 }
 
 .icon-block+.icon-block {
-    border-left: 1px solid #333; /* "grayish black" */
+    border-left: 1px solid #333;
 }
 
 .icon-block:hover {
@@ -269,30 +270,29 @@ body {
     color: #E74C3C;
 }
 
-.card-image:hover .card-image-bg {
-    transform: scale(1.1) translateY(-5px); /* Zooms, moves up */
-    opacity: 0.7; /* Fades to 70% */
+.news-card-image:hover .card-image-bg {
+    transform: scale(1.1) translateY(-5px);
+    opacity: 0.7;
 }
 
-.card-image:hover .red-bar {
-    opacity: 1;
-    transform: translateY(0); /* Slides it into view */
+.news-card-image:hover .red-bar {
+    opacity: .9;
+    transform: translateY(0);
 }
 
-/* Card Image URLs */
 .card-image-1 {
-    background-image: url('https://i.imgur.com/8xQyD3b.png');
+    background-image: url('News\ Block\ 1.jpg');
 }
 
 .card-image-2 {
-    background-image: url('https://i.imgur.com/XqT5qJ1.png');
+    background-image: url('News\ Block\ 2.jpg');
 }
 
 .card-image-3 {
-    background-image: url('https://i.imgur.com/GjN51N9.png');
+    background-image: url('News\ Block\ 3.jpg');
 }
 
-.card-content h2 {
+.news-card-content h2 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 22px;
     line-height: 1.3;
@@ -303,7 +303,7 @@ body {
     text-align: left;
 }
 
-.card-content p {
+.news-card-content p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 1.7;
@@ -313,7 +313,7 @@ body {
     text-align: left;
 }
 
-.card-info { /* Renamed from .card-meta */
+.card-info {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -321,13 +321,13 @@ body {
     font-size: 12px;
 }
 
-.card-comments { /* Renamed from .meta-item */
+.card-comments {
     display: flex;
     align-items: center;
     color: #aaa;
 }
 
-.card-comments .icon { /* Selector updated from .meta-item .icon */
+.card-comments .icon {
     font-size: 12px;
     margin-right: 3px;
     color: #bbb;
@@ -338,13 +338,13 @@ body {
     color: #E74C3C;
 }
 
-.card-read-more { /* Renamed from .meta-read-more */
+.card-read-more {
     padding-left: 15px;
     margin-left: 15px;
     border-left: 1px solid #e0e0e0;
 }
 
-.card-info .read-more { /* Selector updated from .card-meta .read-more */
+.card-info .read-more {
     font-size: 12px;
     font-weight: bold;
     color: #E74C3C;
@@ -352,38 +352,34 @@ body {
     transition: color 0.3s ease;
 }
 
-.card-info .read-more:hover { /* Selector updated from .card-meta .read-more:hover */
+.card-info .read-more:hover {
     color: #333;
 }
 
 /* ===============================================
     === IMPORTANT SUBJECTS SECTION ===
-   ===============================================
-*/
+   =============================================== */
 
 .subjects-section {
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     padding: 40px 0;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
 
-/* This is the "wrapper" div that holds the 2 columns */
 .subjects-content-wrapper {
     display: flex;
     gap: 30px;
 }
 
-/* COLUMN 1: The "big-box" */
 .subjects-main-column {
-    flex: 3; /* Makes this column 3/4 width */
+    flex: 3;
     display: flex;
-    flex-direction: column; /* Stacks header, list, and dots vertically */
+    flex-direction: column;
 }
 
-/* COLUMN 2: The "ad" */
 .subjects-ad {
-    flex: 1; /* Makes this column 1/4 width */
+    flex: 1;
     background-image: url('home_politics_join_1.jpg');
     background-size: cover;
     background-position: center;
@@ -392,18 +388,14 @@ body {
 }
 
 .subjects-ad:hover {
-    /* Use a different placeholder for the dark image */
     background-image: url('home_politics_join_2.jpg');
 }
 
-/* --- STYLES INSIDE THE "big-box" --- */
-
-/* Header (Title & Arrows) */
 .subjects-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px; /* Space between header and cards */
+    margin-bottom: 30px;
 }
 
 .subjects-title {
@@ -438,18 +430,16 @@ body {
     background-color: #e0e0e0;
 }
 
-/* List of 3 Cards (small-boxes) */
 .subjects-list {
     display: flex;
     gap: 25px;
 }
 
-/* Dots */
 .slider-dots {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 30px; /* Space between cards and dots */
+    margin-top: 30px;
 }
 
 .slider-dots .dot {
@@ -459,30 +449,29 @@ body {
     background-color: #ddd;
 }
 
-.slider-dots .dot.active {
-    background-color: #E74C3C; /* Your red color */
+.slider-dots .dot .is-active {
+    background-color: #E74C3C;
 }
 
-/* --- Individual Subject Card --- */
 .subject-card {
-    flex: 1; /* Each card takes 1/3 of the .subjects-list width */
+    flex: 1;
     text-align: left;
 }
 
 .subject-image {
     position: relative;
-    overflow: hidden; /* This was added */
+    overflow: hidden;
 }
 
 .subject-image img {
     width: 100%;
     display: block;
     transition: transform 0.3s ease;
-    transform: scale(1.1); /* MODIFIED: Start zoomed in */
+    transform: scale(1.1);
 }
 
 .subject-image:hover img {
-    transform: scale(1.1) translateY(-5px); /* MODIFIED: Keep zoom, move up */
+    transform: scale(1.1) translateY(-5px);
 }
 
 .subject-date {
@@ -507,7 +496,7 @@ body {
 .subject-divider {
     width: 40px;
     height: 2px;
-    background-color: #E74C3C; /* Your red color */
+    background-color: #E74C3C;
     margin-bottom: 20px;
 }
 
@@ -539,11 +528,9 @@ body {
     padding: 8px 12px;
 }
 
-
 /* ===============================================
     === INFO SECTION (History, Docs, About) ===
-   ===============================================
-*/
+   =============================================== */
 
 .info-section {
     padding: 50px 0; 
@@ -554,27 +541,21 @@ body {
     height: auto;
 }
 
-/* This holds the 3 "small blocks" */
 .info-grid {
     display: flex;
-    gap: 30px; /* This creates the space BETWEEN the blocks */
+    gap: 30px;
 }
 
-/* This styles ALL 3 "small blocks" */
 .info-column {
-    flex: 1; /* This makes all 3 blocks equal (now 380px each) */
-    min-width: 0; /* Prevents text overflow */
-    
-    /* This makes the "Read more" button align to the bottom */
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    text-align: left; /* Aligns all text to the left */
+    text-align: left;
 }
 
-
-/* This is the "top internal block" (heading) */
 .info-title {
-   font-family: "Merriweather", "Times New Roman", serif; /* Uses light font */
+   font-family: "Merriweather", "Times New Roman", serif;
    font-size: 28px;
    font-weight: 300; 
    color: #444;
@@ -582,12 +563,10 @@ body {
    margin-bottom: 25px;
 }
 
-/* === Styles for the "bottom internal block" (content) === */
-
 .history-column .info-image img {
-    width: 380px; /* This now fits the 380px column perfectly */
+    width: 380px;
     height: 180px;
-    object-fit: cover; /* Prevents image from stretching */
+    object-fit: cover;
     display: block;
 }
 
@@ -613,12 +592,10 @@ body {
     font-weight: normal; 
 }
 
-/* This rule makes the first paragraph larger */
 .info-column .para {
     font-size: 18px;
 }
 
-/* Read more button */
 .info-read-more {
     display: inline-block;
     text-decoration: none;
@@ -630,7 +607,7 @@ body {
     font-size: 14px;
     font-weight: 400; 
     transition: all 0.3s ease;
-    margin-top: auto; /* Pushes button to the bottom */
+    margin-top: auto;
     align-self: flex-start;
 }
 
@@ -638,7 +615,6 @@ body {
     background-color: #f0f0f0; 
 }
 
-/* === Document List Styles (UPDATED) === */
 .document-list {
     margin: 0;
     padding: 0;
@@ -651,11 +627,10 @@ body {
     margin-bottom: 25px;
 }
 
-/* --- THIS RULE IS NOW UPDATED FOR AN IMG TAG --- */
 .pdf-icon {
     display: block; 
-    width: 45px; /* CHANGED: Was 50px */
-    height: 60px; /* CHANGED: Was 50px */
+    width: 45px;
+    height: 60px;
     border-radius: 3px;
     flex-shrink: 0;
 }
@@ -685,102 +660,206 @@ body {
     font-weight: normal; 
 }
 
-/* --- Footer --- */
-.footer {
-    background-color: lightgreen;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
+
+
+/* Hero Banner Section */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 350px; /* fixed height similar to your screenshot */
+  background: url('slogan.jpg') center center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Content inside the hero section */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* "Our Slogan" image */
+.hero-slogan {
+  width: 120px;  /* adjust to match your image proportion */
+  height: 30px; /* adjust to match your image proportion */
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Main headline */
+.hero-title {
+  font-family: "Merriweather", serif;
+  font-size: 36px;
+  font-weight: 580;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.logo-section {
+    background-color: #1c1c1c;  /* dark background */
+    height: 240px;              /* bar height in pixels */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #2a2a2a;   /* subtle top border */
+    border-bottom: 1px solid #2a2a2a;/* subtle bottom border */
     width: 100%;
 }
 
+.logo-image {
+    width: 70px;        /* adjust to fit your logo */
+}
+
+
+
+/* Main footer bar */
+#my-footer {
+  background-color: #1c1c1c;  /* Dark grey background */
+  color: #a0a0a0;            /* Light grey text color */
+  padding: 25px 30px;        /* Spacing above/below and left/right */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  border-top: 1px solid white;   /* subtle top border */
+}
+
+/* Container to hold the content */
+.footer-container {
+  display: flex;              /* Use flexbox for easy layout */
+  justify-content: space-between; /* Pushes text left, arrow right */
+  align-items: center;        /* Vertically centers items */
+  max-width: 1200px;          /* Optional: sets a max width */
+  margin: 0 auto;             /* Optional: centers the container */
+}
+
+/* Styles for the links (Muffin group, WordPress) */
+.copyright-text a {
+  color: #e0e0e0;            /* Lighter color for links */
+  text-decoration: none;      /* Removes underline */
+  font-weight: bold;
+}
+
+/* Add underline when hovering links */
+.copyright-text a:hover {
+  text-decoration: underline;
+}
+
+/* Styles for the "Back to Top" arrow */
+#back-to-top {
+  color: #a0a0a0;             /* Same color as main text */
+  text-decoration: none;      /* Removes underline */
+  font-size: 28px;            /* Makes the arrow larger */
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Make the arrow white on hover */
+#back-to-top:hover {
+  color: #ffffff;
+}
 
 /* ===============================================
     === RESPONSIVE STYLES (Mobile) ===
-   ===============================================
-*/
+   =============================================== */
 
 @media (max-width: 768px) {
-    
-    .container {
-        padding: 0 15px; /* Less padding on mobile */
+    .wrap {
+        padding: 0 15px;
     }
 
-    /* --- Responsive Header --- */
     .menu ul {
         flex-direction: column;
         align-items: center;
     }
+
     .menu ul li {
         border-left: none;
         border-top: 1px solid rgb(135, 95, 95);
-        width: 100%; /* Make list items take full width */
+        width: 100%;
         text-align: center;
     }
+
     .menu ul li:first-child {
         border-top: none;
     }
+
     .header {
-        height: auto; /* Let header height be automatic */
+        height: auto;
         padding-bottom: 1px;
     }
-    .nav {
+
+    .header-nav {
         margin-top: 20px;
     }
 
-    /* --- Responsive Slideshow --- */
     .slideshow-content h1 {
         font-size: 36px;
     }
+
     .slideshow-content p {
         font-size: 16px;
     }
+
     .slideshow {
         height: 500px;
     }
 
-    /* --- Responsive Info Bar --- */
-    .info .container {
+    .info .wrap {
         flex-direction: column;
         gap: 20px;
         align-items: flex-start;
     }
 
-    /* --- Responsive News Grid --- */
     .news-grid {
         flex-direction: column;
         gap: 40px;
     }
 
-    /* --- Responsive Subjects Section --- */
     .subjects-content-wrapper {
-        flex-direction: column; /* Stacks the ad below the big-box */
+        flex-direction: column;
     }
 
     .subjects-list {
-        flex-direction: column; /* Stacks the 3 cards */
+        flex-direction: column;
         gap: 40px;
     }
 
     .subjects-ad {
-        max-width: 300px; /* Stop ad from being huge */
-        min-height: 400px; /* Give it some height */
-        align-self: center; /* Center the ad */
+        max-width: 300px;
+        height: 300px;
+        margin: 0 auto;
     }
 
-    .subjects-header {
-        flex-direction: column; /* Stacks the arrows below the title */
-        gap: 20px;
-        align-items: flex-start; /* Aligns title to the left */
+    .hero-banner {
+        height: 280px;
     }
 
-    .slider-arrows {
-        align-self: flex-start; /* Aligns arrows to the left */
+    .hero-slogan {
+         width: 150px;
     }
 
-    /* --- Responsive Info Grid (History/Docs/About) --- */
-    .info-grid {
-        flex-direction: column;
-        gap: 40px;
+    .hero-title {
+        font-size: 26px;
     }
 }
