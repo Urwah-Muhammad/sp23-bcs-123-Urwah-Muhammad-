@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h3>Super Admin Dashboard</h3>
+  <p class="text-muted">Welcome, <%= typeof user !== 'undefined' && user ? user.name : "Admin" %></p>
+  
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Product Management</h5>
+          <p class="card-text">Manage your products - add, edit, or delete products from your store.</p>
+          <a href="/super-admin/products" class="btn btn-primary">Manage Products</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Quick Actions</h5>
+          <p class="card-text">Quick access to common admin tasks.</p>
+          <a href="/super-admin/products/create" class="btn btn-success">Add New Product</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

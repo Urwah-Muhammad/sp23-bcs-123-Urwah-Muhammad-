@@ -1,35 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My First Web Page</title>
-  <link rel="stylesheet" href="Styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-
-  <!-- Header -->
+  <!-- Header (static HTML version of `views/layouts/partials/header.ejs`) -->
   <div class="header">
     <div class="wrap">
       <div class="logo">
-        <img src="home_politics_logo.png" alt="Logo">
+        <img src="/images/home_politics_logo.png" alt="Logo">
       </div>
 
       <div class="header-nav">
         <div class="menu">
           <ul>
-            <li>Home</li>
+            <li><a class="checkout-button" href="/">Home</a></li>
             <li>News</li>
             <li>Important Subjects</li>
             <li>About</li>
             <li>Documents</li>
             <li>Staff</li>
-            <li><a class="checkout-button" href="..\Assignment 1\Check Out Page.html">CheckOut</a></li>
+            <li><a class="checkout-button" href="/checkout">CheckOut</a></li>
+            <li><a class="checkout-button" href="/products">Products</a></li>
+            <li><a class="checkout-button" href="/login">Login</a></li>
+            <li><a class="checkout-button" href="/register">Register</a></li>
+            <li><a class="checkout-button" href="/super-admin">Admin</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Body (copied from `views/site/homepage.ejs`) -->
   
 
   <!-- Slideshow -->
@@ -158,7 +164,7 @@
 
             <div class="subject-card">
               <div class="subject-image">
-                <img src="Important_subjects_1.jpg" alt="Man with gray hair">
+                <img src="/images/Important_subjects_1.jpg" alt="Man with gray hair">
                 <span class="subject-date">May 5, 2014</span>
               </div>
               <div class="subject-info">
@@ -173,7 +179,7 @@
 
             <div class="subject-card">
               <div class="subject-image">
-                <img src="Important_subjects_2.jpg" alt="Man with scarf">
+                <img src="/images/Important_subjects_2.jpg" alt="Man with scarf">
                 <span class="subject-date">May 4, 2014</span>
               </div>
               <div class="subject-info">
@@ -188,7 +194,7 @@
 
             <div class="subject-card">
               <div class="subject-image">
-                <img src="Important_subjects_3.jpg" alt="Group of people walking">
+                <img src="/images/Important_subjects_3.jpg" alt="Group of people walking">
                 <span class="subject-date">May 3, 2014</span>
               </div>
               <div class="subject-info">
@@ -223,7 +229,7 @@
         <div class="info-column history-column">
           <h3 class="info-title">History</h3>
           <div class="info-image">
-            <img src="home_politics_about.jpg" alt="Man in a meeting">
+            <img src="/images/home_politics_about.jpg" alt="Man in a meeting">
           </div>
           <h4 class="info-subtitle">Nunc lobortis purus sit amet risus aliquet</h4>
           <p>Vivamus faucibus elit erat, fermentum tincidunt urna gravida nec. Mauris eget porttitor lorem. Nunc lobortis purus sit amet risus aliquet, nec fringilla nullam.</p>
@@ -235,7 +241,7 @@
           <div class="document-list">
 
             <div class="document-item">
-              <img src="download.png" alt="Download PDF" class="pdf-icon">
+              <img src="/images/download.png" alt="Download PDF" class="pdf-icon">
               <div class="document-details">
                 <a href="#" class="document-link">Nam sit amet tincidunt ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi mauris.</a>
                 <span class="download-text">Download document</span>
@@ -243,7 +249,7 @@
             </div>
 
             <div class="document-item">
-              <img src="download.png" alt="Download PDF" class="pdf-icon">
+              <img src="/images/download.png" alt="Download PDF" class="pdf-icon">
               <div class="document-details">
                 <a href="#" class="document-link">Fusce tempus felis justo, non efficitur metus tempor a. Quisque venenatis est ac arcu vulputate molestie. Mauris id.</a>
                 <span class="download-text">Download document</span>
@@ -251,7 +257,7 @@
             </div>
 
             <div class="document-item">
-              <img src="download.png" alt="Download PDF" class="pdf-icon">
+              <img src="/images/download.png" alt="Download PDF" class="pdf-icon">
               <div class="document-details">
                 <a href="#" class="document-link">Aliquam erat volutpat. Cras lectus ante, commodo eu congue in, pharetra id nulla. Maecenas nunc mi, pulvinar dictum.</a>
                 <span class="download-text">Download document</span>
@@ -273,66 +279,63 @@
     </div>
   </div>
 
-
-
   <!-- Testimonials Section -->
   <div id="Customer_Testimonials" class="testimonials-main">
-  <h2 class="testimonials-heading">Customer Reviews</h2>
+    <h2 class="testimonials-heading">Customer Reviews</h2>
 
-  <div class="testimonial-box">
-    <img src="Woman 1.jpeg" alt="Sarah Johnson" class="testimonial-img">
-    <h4>Sarah Johnson</h4>
-    <div class="stars">⭐⭐⭐⭐⭐</div>
-    <p>"Amazing experience! The checkout process was smooth and fast. Highly recommended!"</p>
+    <div class="testimonial-box">
+      <img src="/images/Woman 1.jpeg" alt="Sarah Johnson" class="testimonial-img">
+      <h4>Sarah Johnson</h4>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Amazing experience! The checkout process was smooth and fast. Highly recommended!"</p>
+    </div>
+
+    <div class="testimonial-box">
+      <img src="/images/Man 1.jpeg" alt="Michael Lee" class="testimonial-img">
+      <h4>Michael Lee</h4>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <p>"Great product quality and quick delivery. I'll definitely shop again!"</p>
+    </div>
+
+    <div class="testimonial-box">
+      <img src="/images/Women 2.jpeg" alt="Ayesha Khan" class="testimonial-img">
+      <h4>Ayesha Khan</h4>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Loved the packaging and thank-you note inside. Such attention to detail!"</p>
+    </div>
+
+    <div class="testimonial-box hidden-box">
+      <img src="/images/Man 2.jpeg" alt="David Smith" class="testimonial-img">
+      <h4>David Smith</h4>
+      <div class="stars">⭐⭐⭐</div>
+      <p>"Good service overall, though delivery could be a bit faster next time."</p>
+    </div>
   </div>
-
-  <div class="testimonial-box">
-    <img src="Man 1.jpeg" alt="Michael Lee" class="testimonial-img">
-    <h4>Michael Lee</h4>
-    <div class="stars">⭐⭐⭐⭐</div>
-    <p>"Great product quality and quick delivery. I’ll definitely shop again!"</p>
-  </div>
-
-  <div class="testimonial-box">
-    <img src="Women 2.jpeg" alt="Ayesha Khan" class="testimonial-img">
-    <h4>Ayesha Khan</h4>
-    <div class="stars">⭐⭐⭐⭐⭐</div>
-    <p>"Loved the packaging and thank-you note inside. Such attention to detail!"</p>
-  </div>
-
-  <div class="testimonial-box hidden-box">
-    <img src="Man 2.jpeg" alt="David Smith" class="testimonial-img">
-    <h4>David Smith</h4>
-    <div class="stars">⭐⭐⭐</div>
-    <p>"Good service overall, though delivery could be a bit faster next time."</p>
-  </div>
-</div>
-
-
-
 
   <!-- Hero Banner -->
-    <div class="hero-banner">
-        <div class="hero-content">
-            <img src="home_politics_our_slogan.png" alt="Our Slogan" class="hero-slogan">
-            <h1 class="hero-title">We are close to people</h1>
-        </div>
+  <div class="hero-banner">
+    <div class="hero-content">
+      <img src="/images/home_politics_our_slogan.png" alt="Our Slogan" class="hero-slogan">
+      <h1 class="hero-title">We are close to people</h1>
     </div>
+  </div>
 
-    <div class="logo-section">
-        <img src="logo.png" alt="Logo" class="logo-image">
-    </div>
-  <!-- Footer -->
-    <div id="my-footer">
-        <div class="footer-container">
-            <div class="copyright-text">
-                © 2015 BeTheme by <a href="#">Muffin group</a> | All Rights Reserved | Powered by <a href="https://wordpress.org/">WordPress</a>
-            </div>
-            <a href="#" id="back-to-top" title="Back to top">
-            ^
-            </a>
-        </div>
-    </div>
+  <div class="logo-section">
+    <img src="/images/logo.png" alt="Logo" class="logo-image">
+  </div>
 
+  <!-- Footer (static HTML version of `views/layouts/partials/footer.ejs`) -->
+  <div id="my-footer">
+    <div class="footer-container">
+      <div class="copyright-text">
+        © 2015 BeTheme by <a href="#">Muffin group</a> | All Rights Reserved | Powered by <a href="https://wordpress.org/">WordPress</a>
+      </div>
+      <a href="#" id="back-to-top" title="Back to top">^</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+

@@ -1,0 +1,33 @@
+  <!-- Header -->
+  <div class="header">
+    <div class="wrap">
+      <div class="logo">
+        <img src="/images/home_politics_logo.png" alt="Logo">
+      </div>
+
+      <div class="header-nav">
+        <div class="menu">
+          <ul>
+            <li><a class="checkout-button" href="/">Home</a></li>
+            <li>News</li>
+            <li>Important Subjects</li>
+            <li>About</li>
+            <li>Documents</li>
+            <li>Staff</li>
+            <li><a class="checkout-button" href="/checkout">CheckOut</a></li>
+            <li><a class="checkout-button" href="/products">Products</a></li>
+            <% if (typeof isAdmin !== "undefined" && isAdmin) { %>
+              <li><a class="checkout-button" href="/super-admin">Admin</a></li>
+            <% } %>
+            <% if (typeof user !== "undefined" && user) { %>
+              <li><a class="checkout-button" href="/my-account">My Account</a></li>
+              <li><a class="checkout-button" href="/logout">Logout</a></li>
+            <% } else { %>
+              <li><a class="checkout-button" href="/login">Login</a></li>
+              <li><a class="checkout-button" href="/register">Register</a></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,134 @@
+<!-- Success Page (Moved here and initially hidden by CSS) -->
+<div id="success-page" class="container my-5 text-center" style="display: <%= typeof showSuccess !== 'undefined' && showSuccess ? 'block' : 'none' %>;">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm p-5 rounded-4">
+                <div class="mx-auto d-flex align-items-center justify-content-center bg-success-subtle rounded-circle mb-4" style="width: 96px; height: 96px;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-check2 text-success" viewBox="0 0 16 16">
+                        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </div>
+                <h1 class="display-5 fw-bold">Payment Successful!</h1>
+                <p class="text-muted mt-2">Thank you for your purchase.</p>
+                <div class="mt-4 text-start bg-light p-4 rounded-3">
+                     <p class="fs-5">Your order number is: <span id="order-number" class="fw-bold text-primary"><%= typeof orderNumber !== 'undefined' ? orderNumber : 'ORD-' + Date.now().toString().slice(-6) %></span></p>
+                     <p class="text-muted small mt-2 mb-0">You will receive an email confirmation shortly with your order details.</p>
+                </div>
+                <a href="/" class="btn btn-primary w-100 py-3 mt-4">
+                    Continue Shopping
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="checkout-page" class="container my-5" style="display: <%= typeof showSuccess !== 'undefined' && showSuccess ? 'none' : 'block' %>;">
+    <div class="row g-5">
+        <!-- Left Side: Shipping and Payment -->
+        <div class="col-lg-7">
+            <div class="card border-0 shadow-sm p-4 p-lg-5 rounded-4">
+                <h1 class="fw-bold mb-4">Checkout</h1>
+
+                <!-- Shipping Information -->
+                <div class="mb-5">
+                    <h2 class="fs-5 fw-semibold text-secondary mb-3 border-bottom pb-2">Shipping Information</h2>
+                    <form id="checkout-form" method="POST" action="/checkout/confirm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" id="address" name="address" class="form-control" placeholder="123 Main St" required>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" id="city" name="city" class="form-control" placeholder="Anytown" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="zip" class="form-label">ZIP Code</label>
+                                <input type="text" id="zip" name="zip" class="form-control" placeholder="12345" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Payment Details -->
+                <div>
+                    <h2 class="fs-5 fw-semibold text-secondary mb-3 border-bottom pb-2">Payment Details</h2>
+                    <div class="mb-3">
+                        <label for="card-number" class="form-label">Card Number</label>
+                        <input type="text" id="card-number" name="card-number" class="form-control" placeholder="**** **** **** 1234" required>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="expiry-date" class="form-label">Expiry Date</label>
+                            <input type="text" id="expiry-date" name="expiry-date" class="form-control" placeholder="MM/YY" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="text" id="cvv" name="cvv" class="form-control" placeholder="123" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Order Summary -->
+        <div class="col-lg-5">
+            <div class="card border-0 shadow-sm p-4 p-lg-5 rounded-4">
+                <h2 class="fs-4 fw-semibold mb-4 border-bottom pb-3">Order Summary</h2>
+                <div class="vstack gap-4">
+                    <% if (typeof cartItems !== 'undefined' && cartItems.length > 0) { %>
+                        <% cartItems.forEach(item => { %>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <% if (item.image) { %>
+                                        <img src="/images/uploaded/<%= item.image %>" alt="<%= item.name %>" class="rounded me-3" style="width: 64px; height: 64px; object-fit: cover;">
+                                    <% } else { %>
+                                        <img src="https://placehold.co/64x64/e9ecef/495057?text=No+Image" alt="<%= item.name %>" class="rounded me-3" style="width: 64px; height: 64px; object-fit: cover;">
+                                    <% } %>
+                                    <div>
+                                        <p class="fw-semibold mb-0"><%= item.name %></p>
+                                        <p class="text-muted small mb-0">Color: <%= item.color %></p>
+                                        <p class="text-muted small mb-0">Qty: <%= item.quantity %></p>
+                                    </div>
+                                </div>
+                                <p class="fw-semibold mb-0">$<%= (item.price * item.quantity).toFixed(2) %></p>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <div class="alert alert-info mb-0">No items in cart</div>
+                    <% } %>
+                </div>
+                <div class="mt-4 pt-4 border-top">
+                    <div class="d-flex justify-content-between text-secondary">
+                        <p>Subtotal</p>
+                        <p>$<%= typeof subtotal !== 'undefined' ? subtotal : '0.00' %></p>
+                    </div>
+                    <div class="d-flex justify-content-between text-secondary mt-2">
+                        <p>Shipping</p>
+                        <p>$<%= typeof shipping !== 'undefined' ? shipping : '0.00' %></p>
+                    </div>
+                    <div class="d-flex justify-content-between fw-bold fs-5 mt-3">
+                        <p>Total</p>
+                        <p>$<%= typeof total !== 'undefined' ? total : '0.00' %></p>
+                    </div>
+                </div>
+                <button type="submit" form="checkout-form" class="btn btn-primary w-100 py-3 mt-4 fw-bold">
+                    Confirm Payment
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Handle form submission
+document.getElementById('checkout-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Submit the form
+    this.submit();
+});
+</script>
