@@ -17,11 +17,15 @@ router.post("/login", async function (req, res, next) {
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (validPassword) {
     // Store only necessary user data as plain object (not Mongoose document)
+    let roles = user.roles || [];
+    if (roles.includes("admin")) {
+      roles = ["admin"];
+    }
     req.session.user = {
       _id: user._id,
       name: user.name,
       email: user.email,
-      roles: user.roles || []
+      roles: roles
     };
     req.flash("success", "Logged in Successfully");
     if (Array.isArray(user.roles) && user.roles.includes("admin")) return res.redirect("/super-admin");
@@ -51,7 +55,7 @@ router.post("/register", async function (req, res, next) {
   user = new User(req.body);
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(req.body.password, salt);
-  if (!user.roles) {
+  if (!user.roles || user.roles.length === 0) {
     user.roles = ["customer"];
   }
   await user.save();
@@ -59,7 +63,7 @@ router.post("/register", async function (req, res, next) {
 });
 
 router.get("/contact-us", function (req, res, next) {
-  return res.render("site/contact", { layout: "layout", title: "Contact Us" });
+  return res.render("site/contact", { layout: "layout1", title: "Contact Us" });
 });
 
 // Products page route (additional feature)

@@ -6,6 +6,7 @@ var logger = require("morgan");
 var expressLayouts = require("express-ejs-layouts");
 var session = require("express-session");
 var config = require("config");
+var bodyParser = require("body-parser");
 
 var indexRouter = require("./routes/index");
 var protectedRouter = require("./routes/protected");
@@ -16,6 +17,21 @@ var superAdminMiddleware = require("./middlewares/super-admin");
 var apiauth = require("./middlewares/apiauth");
 
 var app = express();
+
+// CORS middleware
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-auth-token");    
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
+app.use(bodyParser.json());
+// for parsing application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -38,9 +54,12 @@ app.use(
 );
 
 // Routes
-app.use("/", sessionAuth, indexRouter);
-app.use("/my-account", sessionAuth, checkSessionAuth, protectedRouter);
-app.use("/", sessionAuth, require("./routes/shop"));
+app.use("/api/auth", require("./routes/api/auth"));
+app.use("/api/public/products", require("./routes/api/public/products"));
+app.use("/api/public/categories", require("./routes/api/public/catagories"));
+app.use("/api/categories", require("./routes/api/catagories"));
+app.use("/api/products", apiauth, require("./routes/api/products"));
+
 app.use(
   "/super-admin",
   sessionAuth,
@@ -55,9 +74,10 @@ app.use(
   superAdminMiddleware,
   require("./routes/super-admin/products")
 );
-app.use("/api/auth", require("./routes/api/auth"));
-app.use("/api/public/products", require("./routes/api/public/products"));
-app.use("/api/products", apiauth, require("./routes/api/products"));
+
+app.use("/my-account", sessionAuth, checkSessionAuth, protectedRouter);
+app.use("/", sessionAuth, indexRouter);
+app.use("/", sessionAuth, require("./routes/shop"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -11,7 +11,9 @@ async function seedAdmin() {
 
     const existingUser = await User.findOne({ email: "admin@admin.com" });
     if (existingUser) {
-      console.log("Admin user already exists!");
+      existingUser.roles = ["admin"];
+      await existingUser.save();
+      console.log("Admin user updated with correct roles!");
       await mongoose.disconnect();
       return;
     }
@@ -23,7 +25,7 @@ async function seedAdmin() {
       name: "Admin",
       email: "admin@admin.com",
       password: hashedPassword,
-      roles: ["admin", "customer"],
+      roles: ["admin"],
     });
 
     await adminUser.save();
