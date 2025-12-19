@@ -1,0 +1,51 @@
+<div class="container mt-4">
+    <h2>Manage Customer Orders</h2>
+    <p>View and update order statuses.</p>
+
+    <div class="table-responsive mt-3">
+        <table class="table table-striped border">
+            <thead class="table-dark">
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Email</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (orders && orders.length > 0) { %>
+                    <% orders.forEach(order => { %>
+                        <tr>
+                            <td><small><%= order._id %></small></td>
+                            <td><%= order.email %></td>
+                            <td><%= new Date(order.createdAt).toLocaleDateString() %></td>
+                            <td>$<%= order.totalPrice.toFixed(2) %></td>
+                            <td>
+                                <span class="badge 
+                                    <%= order.status === 'Delivered' ? 'bg-success' : (order.status === 'Processing' ? 'bg-warning text-dark' : 'bg-secondary') %>">
+                                    <%= order.status %>
+                                </span>
+                            </td>
+                            <td>
+                                <form action="/super-admin/orders/<%= order._id %>/update-status" method="POST" class="d-flex gap-2">
+                                    <select name="status" class="form-select form-select-sm" style="width: 130px;">
+                                        <option value="Placed" <%= order.status === 'Placed' ? 'selected' : '' %>>Placed</option>
+                                        <option value="Processing" <%= order.status === 'Processing' ? 'selected' : '' %>>Processing</option>
+                                        <option value="Delivered" <%= order.status === 'Delivered' ? 'selected' : '' %>>Delivered</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="6" class="text-center">No orders found.</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

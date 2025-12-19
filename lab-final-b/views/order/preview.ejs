@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Order Preview</h2>
+
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cart.forEach(item => { %>
+          <tr>
+            <td><%= item.name %></td>
+            <td>$<%= item.price %></td>
+            <td><%= item.quantity %></td>
+            <td>$<%= (item.price * item.quantity).toFixed(2) %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">Order Summary</div>
+        <div class="card-body">
+          <p class="d-flex justify-content-between">
+            <span>Subtotal:</span>
+            <span>$<%= typeof subtotal !== 'undefined' ? subtotal.toFixed(2) : '0.00' %></span>
+          </p>
+
+          <% if (typeof discount !== 'undefined' && discount > 0) { %>
+          <p class="d-flex justify-content-between text-success">
+            <span>Discount (10%):</span>
+            <span>-$<%= discount.toFixed(2) %></span>
+          </p>
+          <% } %>
+
+          <hr />
+          <h5 class="d-flex justify-content-between">
+            <span>Grand Total:</span>
+            <span>$<%= typeof grandTotal !== 'undefined' ? grandTotal.toFixed(2) : subtotal.toFixed(2) %></span>
+          </h5>
+
+          <form action="/order/preview" method="GET" class="mt-3 mb-3">
+            <div class="input-group">
+              <input type="text" class="form-control" name="coupon" placeholder="Code: SAVE10" 
+                     value="<%= typeof couponApplied !== 'undefined' && couponApplied ? 'SAVE10' : '' %>">
+              <button class="btn btn-outline-secondary" type="submit">Apply</button>
+            </div>
+            <% if (typeof couponApplied !== 'undefined' && couponApplied) { %>
+              <small class="text-success">Coupon applied successfully!</small>
+            <% } %>
+          </form>
+
+          <form action="/order/confirm" method="POST">
+            <% if (typeof couponApplied !== 'undefined' && couponApplied) { %>
+                <input type="hidden" name="coupon" value="SAVE10">
+            <% } %>
+            
+            <div class="mb-3">
+                <label for="email" class="form-label">Confirmation Email</label>
+                <input type="email" class="form-control" name="email" required 
+                       value="<%= typeof user !== 'undefined' && user ? user.email : '' %>">
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mb-2">Confirm Order</button>
+            <a href="/cart" class="btn btn-secondary w-100">Go Back to Cart</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

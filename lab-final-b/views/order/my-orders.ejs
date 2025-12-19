@@ -1,0 +1,50 @@
+<div class="container mt-5 mb-5">
+    <h2 class="text-center mb-4">My Order History</h2>
+
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-6">
+            <form action="/order/my-orders" method="POST" class="card p-4 shadow-sm">
+                <div class="mb-3">
+                    <label class="form-label">Enter your Email Address to view orders:</label>
+                    <input type="email" name="email" class="form-control" placeholder="name@example.com" value="<%= searchedEmail || '' %>" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Fetch Orders</button>
+            </form>
+        </div>
+    </div>
+
+    <% if (orders && orders.length > 0) { %>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% orders.forEach(order => { %>
+                        <tr>
+                            <td><%= order._id %></td>
+                            <td><%= new Date(order.createdAt).toDateString() %></td>
+                            <td>$<%= order.totalPrice.toFixed(2) %></td>
+                            <td>
+                                <% if(order.status === 'Placed') { %>
+                                    <span class="badge bg-primary">Placed</span>
+                                <% } else if (order.status === 'Processing') { %>
+                                    <span class="badge bg-warning text-dark">Processing</span>
+                                <% } else { %>
+                                    <span class="badge bg-success">Delivered</span>
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    <% } else if (orders !== null) { %>
+        <div class="alert alert-warning text-center">No orders found for this email address.</div>
+    <% } %>
+</div>

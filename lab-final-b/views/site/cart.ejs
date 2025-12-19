@@ -28,6 +28,11 @@
                 <td colspan="3"><strong>Total:</strong></td>
                 <td><strong>$<%= typeof total !== 'undefined' ? total.toFixed(2) : '0.00' %></strong></td>
             </tr>
+            <tr>
+                <td colspan="4" class="text-end">
+                    <a href="/order/preview" class="btn btn-success">Proceed to Checkout</a>
+                </td>
+            </tr>
         </tfoot>
     </tbody>
 </table>

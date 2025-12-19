@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-12 col-lg-6 offset-lg-3">
+    <h2 class="mb-4">Register</h2>
+    <form action="/register" method="POST">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" required />
+      </div>
+      <button class="btn btn-success" type="submit">Create account</button>
+      <a class="btn btn-link" href="/login">Back to login</a>
+    </form>
+  </div>
+</div>

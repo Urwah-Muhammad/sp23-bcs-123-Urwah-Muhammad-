@@ -1,0 +1,9 @@
+<h2 class="mb-3">My Account</h2>
+
+<div class="card">
+  <div class="card-body">
+    <p class="mb-1"><strong>Name:</strong> <%= user ? user.name : "" %></p>
+    <p class="mb-1"><strong>Email:</strong> <%= user ? user.email : "" %></p>
+    <p class="mb-0"><strong>Roles:</strong> <%= user && user.roles ? user.roles.join(", ") : "" %></p>
+  </div>
+</div>
