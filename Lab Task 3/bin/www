@@ -95,4 +95,3 @@ mongoose
   .connect(connectionString)
   .then(() => console.log("Connected to " + connectionString))
   .catch((error) => console.log(error.message));
-

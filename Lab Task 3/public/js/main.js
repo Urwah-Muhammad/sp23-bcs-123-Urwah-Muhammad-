@@ -5,15 +5,3 @@ console.log('Website loaded!');
 function showMessage() {
     alert('Hello from JavaScript!');
 }
-
-
-
-
-
-
-
-
-
-
-
-

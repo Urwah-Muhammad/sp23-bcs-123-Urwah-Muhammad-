@@ -9,5 +9,3 @@ module.exports = async function requireAdmin(req, res, next) {
 
   next();
 };
-
-

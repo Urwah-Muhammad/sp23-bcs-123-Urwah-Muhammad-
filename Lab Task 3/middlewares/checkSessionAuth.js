@@ -1,3 +1,4 @@
+
 async function checkSessionAuth(req, res, next) {
   if (!req.session.user) {
     req.flash("danger", "You need to login for this route");
@@ -7,5 +8,3 @@ async function checkSessionAuth(req, res, next) {
 }
 
 module.exports = checkSessionAuth;
-
-

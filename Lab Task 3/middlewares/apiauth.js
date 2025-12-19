@@ -18,5 +18,3 @@ async function apiauth(req, res, next) {
 }
 
 module.exports = apiauth;
-
-

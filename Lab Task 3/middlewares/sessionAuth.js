@@ -26,4 +26,3 @@ async function sessionAuth(req, res, next) {
 }
 
 module.exports = sessionAuth;
-

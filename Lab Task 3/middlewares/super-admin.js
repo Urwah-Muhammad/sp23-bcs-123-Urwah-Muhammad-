@@ -3,5 +3,3 @@ module.exports = async function (req, res, next) {
   res.locals.title = "Admin Panel";
   next();
 };
-
-

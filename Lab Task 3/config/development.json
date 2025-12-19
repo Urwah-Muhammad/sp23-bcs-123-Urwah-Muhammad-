@@ -4,8 +4,3 @@
   "db": "mongodb://localhost:27017/lab_task_3",
   "sessionSecret": "dev-session-secret-change-me"
 }
-
-
-
-
-
